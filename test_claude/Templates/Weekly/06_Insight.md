@@ -23,6 +23,13 @@ domain: ""                # 领域: [[07_System/XX]]
 abstraction: principle    # 抽象: fact/pattern/principle/axiom
 ---
 
+## 🧭 使用范围与边界
+- **适用**: 可独立理解的认知单元与其验证。
+- **不适用**: 知识体系或行动计划（转到 [[07_System/XX]] / [[02_Action/XX]]）。
+- **上下游**: 来自 Seed/Loop，驱动 Action/Project。
+
+---
+
 > [!NOTE] 核心原则
 > **目的**: 储存一个独立、完整的认知单元
 > **触发**: 对任何事物有了新理解/新视角

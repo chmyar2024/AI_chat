@@ -22,6 +22,13 @@ size: medium              # 规模: startup/small/medium/large/enterprise
 industry: ""              # 行业
 ---
 
+## 🧭 使用范围与边界
+- **适用**: 组织实体（公司/机构）关系与战略洞察。
+- **不适用**: 单人关系或非正式群体（转到 [[05_Persona/XX]] / [[25_Community/XX]]）。
+- **上下游**: 影响 Project/Synergy 的合作策略。
+
+---
+
 > [!NOTE] 核心原则
 > **目的**: 管理与组织实体的关系，而不仅仅是个人
 > **触发**: 需要与公司、社区、机构等组织互动

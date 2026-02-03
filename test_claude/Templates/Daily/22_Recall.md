@@ -22,6 +22,13 @@ next_review: <% tp.date.now("YYYY-MM-DD", 1) %>  # 下次复习日期(+1天)
 difficulty: medium        # 难度: easy/medium/hard/failed
 ---
 
+## 🧭 使用范围与边界
+- **适用**: 对 Insight/System/Action 的主动回忆与间隔复习。
+- **不适用**: 新知识记录或行动计划（转到 [[06_Insight/XX]] / [[02_Action/XX]]）。
+- **上下游**: 目标笔记来自 [[06_Insight/XX]] / [[07_System/XX]] / [[02_Action/XX]]。
+
+---
+
 > [!NOTE] 核心原则
 > **目的**: 通过主动回忆和间隔重复，将短期记忆转化为长期记忆
 > **触发**: Insight创建后24小时自动生成，或手动创建
