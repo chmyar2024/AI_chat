@@ -20,6 +20,13 @@ relationship: ""          # 关系: friend/colleague/mentor
 last_contact: ""          # 上次联系
 ---
 
+## 🧭 使用范围与边界
+- **适用**: 与个人的关系、互动与价值交换。
+- **不适用**: 组织或群体（转到 [[24_Organization/XX]] / [[25_Community/XX]]）。
+- **上下游**: 影响 Project/Synergy 的协作质量。
+
+---
+
 > [!NOTE] 核心原则
 > **目的**: 管理真实的人际关系，而不只是概念
 > **触发**: 任何有重要价值交换或情感连接的人

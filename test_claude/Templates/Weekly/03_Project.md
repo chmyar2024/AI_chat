@@ -23,6 +23,13 @@ phase: planning           # 阶段: planning/executing/reviewing/completed
 outcome: ""               # 预期产出
 ---
 
+## 🧭 使用范围与边界
+- **适用**: 多步骤、多角色的目标达成容器。
+- **不适用**: 单一行动或单一洞察（转到 [[02_Action/XX]] / [[06_Insight/XX]]）。
+- **上下游**: 产出 [[04_Asset/XX]]，驱动 Action。
+
+---
+
 > [!NOTE] 核心原则
 > **目的**: 连接认知、实体、创造的具体容器
 > **触发**: 需要协调多人、多资产、多认知的复杂目标

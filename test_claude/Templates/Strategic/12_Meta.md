@@ -18,6 +18,13 @@ focus: optimization       # 焦点: optimization/debugging
 review_cycle: quarterly   # 周期: weekly/monthly/quarterly
 ---
 
+## 🧭 使用范围与边界
+- **适用**: 系统层的使用评估、优化与实验。
+- **不适用**: 具体内容记录（转到对应内容模板）。
+- **上下游**: 产生系统级改动，反馈至模板与流程。
+
+---
+
 > [!NOTE] 核心原则
 > **目的**: 优化操作系统本身，而不是内容
 > **触发**: 系统使用出现明显摩擦或定期审查

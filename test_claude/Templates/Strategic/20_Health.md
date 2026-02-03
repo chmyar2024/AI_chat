@@ -20,6 +20,13 @@ metric_type: self_report  # 指标类型
 trend: stable             # 趋势: improving/stable/worsening
 ---
 
+## 🧭 使用范围与边界
+- **适用**: 身心健康状态与习惯优化。
+- **不适用**: 情绪价值观冲突（转到 [[11_Heart/XX]]）。
+- **上下游**: 约束 Timeflow/Action 的能量配置。
+
+---
+
 > [!NOTE] 核心原则
 > **目的**: 维护身心健康，确保可持续创造
 > **触发**: 每周回顾、身体不适、能量低落时
