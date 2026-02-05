@@ -1,0 +1,133 @@
+---
+# === 核心属性 ===
+type: insight
+mode: quick  # quick | deep
+maturity: budding       # budding | validating | mature | internalized
+created: <%tp.date.now("YYYY-MM-DD HH:mm")%>
+tags: [neuromancer/insight]
+
+# === 扩展属性 ===
+up: []              # 上位概念/MOC [[02-Knowledge/Map]]
+related: []         # 强相关
+counter: []         # 反对观点/竞争假说 (关键新增)
+
+# === SRS 间隔复习 ===
+sr-due: <%tp.date.now("YYYY-MM-DD", 1)%>
+sr-interval: 1
+sr-ease: 250
+
+<%* if (tp.frontmatter.mode === "deep") { %>
+# === Deep Mode 属性 ===
+certainty: 50%      # 确信度
+memory_anchor: ""   # 记忆锚点
+<%* } %>
+---
+
+> [!tip] 模板模式
+> **Quick Mode**: 捕捉核心命题与反直觉点  
+> **Deep Mode**: 完整的认知论证与情境分析
+
+---
+
+## 💡 核心命题 (Thesis)
+
+**Atomic Idea**: <%tp.file.cursor(1)%>
+
+> [!success] 结构化陈述
+> **Context (语境)**: 在...情况下
+> **Signal (信号)**: 观察到...
+> **Insight (洞察)**: 我认为...因为...
+
+---
+
+## 🌉 上下文挂钩 (Context Hooks)
+
+**这个洞察反驳了什么？** (Anti-Pattern)
+- 此前我/主要观点认为...，但其实...
+
+**这个洞察解释了什么？** (Explanation)
+- 它解释了为什么...现象会发生
+
+---
+
+## 🛠️ 应用实验室
+
+**如果这是真的，那意味着...**:
+1. 
+2. 
+
+**验证案例**: [[<%tp.file.cursor(2)%>]]
+
+---
+
+<!-- === DEEP MODE SECTIONS === -->
+
+<%* if (tp.frontmatter.mode === "deep") { %>
+---
+
+## ⚖️ 深度辩证 (Deep Mode)
+
+### 竞争假说 (Competing Hypotheses)
+**其他可能的解释**:
+- 假说A: ...
+- 假说B: ...
+
+**为什么本洞察更好**:
+- 因为...
+
+### 边界测试 (Boundary Check)
+**失效场景**: 
+- 当 [变量] 改变时，此结论失效。
+
+---
+
+## 🧠 认知内化 (Deep Mode)
+> 
+### 决策实验 (Decision Application)
+> [!important] 反向压力测试
+> 在标记为 `internalized` 之前，必须至少完成 3 次决策应用验证，或转化为原则。
+
+**应用尝试**:
+1. 
+2. 
+3. 
+
+### 内化检查 (Status Check)
+```dataviewjs
+const currentPath = dv.current().file.link;
+const loops = dv.pages('"02-Knowledge/Loop"').where(p => p.file.outlinks.includes(currentPath)).length;
+const principles = dv.pages('"04-Strategy/Principle"').where(p => p.file.outlinks.includes(currentPath)).length;
+
+const isReady = loops >= 3 || principles >= 1;
+const color = isReady ? "green" : "orange";
+const icon = isReady ? "✅" : "🚧";
+
+dv.paragraph(`**State**: <span style="color:${color}">${icon} ${isReady ? "Ready for Internalization" : "Validation Needed"}</span>`);
+dv.paragraph(`- **Loop Verifications**: ${loops} / 3`);
+dv.paragraph(`- **Principle Extractions**: ${principles} / 1`);
+```
+
+**记忆锚点**: <%tp.file.cursor(3)%>
+
+**费曼技巧**:
+> 试着用最简单的语言（不带术语）向一个12岁孩子解释：
+> 
+> 
+
+<%* } %>
+
+---
+
+## 🔄 链接网络
+
+**MOC (地图)**: [[02-Knowledge/Map/]]  
+**来源 (Source)**: [[01-Capture/Clip/]]  
+**反向链接 (Counter)**: [[02-Knowledge/Insight/]]  
+
+---
+
+## 📊 引用此处的笔记
+```dataview
+LIST FROM [[]]
+WHERE file.name != this.file.name
+```

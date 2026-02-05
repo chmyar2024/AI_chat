@@ -1,0 +1,14 @@
+filters:
+  and:
+    - type == ["[[Wisdom]]"]
+    - '!file.inFolder("Templates")'
+views:
+  - type: table
+    name: Table
+    order:
+      - file.name
+      - file.ctime
+      - categories
+      - status
+      - tags
+      - source

@@ -1,0 +1,14 @@
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - type == ["[[practice]]"]
+        - '!file.inFolder("Templates")'
+    order:
+      - file.name
+      - file.ctime
+      - categories
+      - status
+      - tags
+      - source

@@ -1,0 +1,17 @@
+filters:
+  and:
+    - type == ["[[Codex]]"]
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - type == ["[[codex]]"]
+        - '!file.inFolder("Templates")'
+    order:
+      - file.name
+      - file.ctime
+      - categories
+      - status
+      - tags
+      - source
