@@ -1,15 +1,16 @@
 ---
 # === 核心属性 ===
 type: clip
-mode: quick
-status: inbox
 created: <%tp.date.now("YYYY-MM-DD HH:mm")%>
+updated: <%tp.date.now("YYYY-MM-DD HH:mm")%>
+last_reviewed: ""       # 上次审阅时间 (YYYY-MM-DD)
 tags: [neuromancer/clip]
 
 # === 扩展属性 ===
-source_url: ""
+origin_link: ""
 author: ""
-topics: []
+basis: []
+context: []
 ---
 
 > [!tip] Progressive Summarization (渐进式总结)
@@ -49,5 +50,5 @@ topics: []
 ---
 
 ## 📎 元数据
-**Source**: `= this.source_url`
+**Origin**: `= this.origin_link`
 **Author**: `= this.author`

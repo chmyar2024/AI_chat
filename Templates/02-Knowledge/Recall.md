@@ -1,23 +1,22 @@
 ---
 # === 核心属性 ===
 type: recall
-status: active
+claim_type: prompt       # prompt | fact | concept
 created: <%tp.date.now("YYYY-MM-DD HH:mm")%>
+updated: <%tp.date.now("YYYY-MM-DD HH:mm")%>
+last_reviewed: ""       # 上次审阅时间 (YYYY-MM-DD)
 tags: [neuromancer/recall]
 
-# === SRS 属性 (Spaced Repetition) ===
-sr-due: <%tp.date.now("YYYY-MM-DD", 1)%>
-sr-interval: 1
-sr-ease: 250
-
 # === 扩展属性 ===
-source: ""          # 来源笔记 [[02-Knowledge/Insight]]
-round: 1            # 复习轮次 (R1-R6)
+origin_node: ""     # 来源笔记 [[02-Knowledge/Insight]]
+review_focus: ""    # 主题驱动复习的焦点
+assumptions: []
+invalidated_by: []
 ---
 
-> [!abstract] Recall: 间隔复习自动化
-> **原理**: 艾宾浩斯遗忘曲线  
-> **工具**: 集成 Obsidian Spaced Repetition 插件
+> [!abstract] Recall: 主题驱动复习
+> **原则**: 不依赖截止日期，而是围绕主题或问题做回忆  
+> **目标**: 强化理解与应用，而非刷题式记忆
 
 ---
 
@@ -70,17 +69,8 @@ round: 1            # 复习轮次 (R1-R6)
 
 ## 📊 复习记录
 
-### 间隔复习时间表
-- **R1**: +1天 (<%tp.date.now("YYYY-MM-DD", 1)%>)
-- **R2**: +3天 (<%tp.date.now("YYYY-MM-DD", 4)%>)
-- **R3**: +7天 (<%tp.date.now("YYYY-MM-DD", 11)%>)
-- **R4**: +14天 (<%tp.date.now("YYYY-MM-DD", 25)%>)
-- **R5**: +30天 (<%tp.date.now("YYYY-MM-DD", 55)%>)
-- **R6**: +90天 (<%tp.date.now("YYYY-MM-DD", 145)%>)
-
-**当前轮次**: R`= this.round`  
-**下次复习**: `= this.sr-due`  
-**间隔**: `= this.sr-interval` 天
+**本次复习主题**: `= this.review_focus`  
+**上次审阅**: `= this.last_reviewed`
 
 ---
 
@@ -113,9 +103,9 @@ round: 1            # 复习轮次 (R1-R6)
 
 ## 📈 复习历史
 
-| 日期 | 轮次 | 难度 | 备注 |
+| 日期 | 主题 | 难度 | 备注 |
 |------|------|------|------|
-| <%tp.date.now("YYYY-MM-DD")%> | R1 | - | 创建 |
+| <%tp.date.now("YYYY-MM-DD")%> |  | - | 创建 |
 | | | | |
 
 ---

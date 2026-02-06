@@ -9,8 +9,9 @@ tags: [neuromancer/person]
 # === 扩展属性 ===
 relevance: 5        # 关联紧密度 (1-10) - 邓巴数权重
 last_contact: ""    # YYYY-MM-DD
-related: []
-up: []              # 所属组织 [[03-Network/Org]]
+basis: []
+counter: []
+org: []             # 所属组织 [[03-Network/Org]]
 ---
 
 > [!tip] Person: 关系节点

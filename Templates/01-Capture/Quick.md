@@ -7,7 +7,7 @@ created: <%tp.date.now("YYYY-MM-DD HH:mm")%>
 tags: [neuromancer/quick]
 
 # === 扩展属性 ===
-related: []
+basis: []
 ---
 
 > [!abstract] Quick: 最快速的笔记

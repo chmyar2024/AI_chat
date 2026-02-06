@@ -1,23 +1,26 @@
 ---
 # === 核心属性 ===
 type: system
-mode: quick
+claim_type: model         # model | framework | theory
 maturity: developing    # developing | stable | evergreen
+confidence: 0.6
 created: <%tp.date.now("YYYY-MM-DD HH:mm")%>
+updated: <%tp.date.now("YYYY-MM-DD HH:mm")%>
+last_reviewed: ""       # 上次审阅时间 (YYYY-MM-DD)
 tags: [neuromancer/system]
 
 # === 扩展属性 ===
 domain: ""          # 领域 (技术/商业/生活)
-related: []
-<%* if (tp.frontmatter.mode === "deep") { %>
-# === Deep Mode 属性 ===
-complexity: medium  # complexity level
-<%* } %>
+basis: []
+counter: []
+assumptions: []
+invalidated_by: []
+supersedes: []
 ---
 
 > [!tip] System: 知识结构与模型
-> **Quick Mode**: 快速定义系统边界  
-> **Deep Mode**: 深度系统建模
+> **默认深度**: 建议写清系统边界与关键假设  
+> **控制负担**: 先写核心要素，细化可延后
 
 ---
 
@@ -43,22 +46,30 @@ complexity: medium  # complexity level
 
 ---
 
+## 🔍 证据与边界 (Epistemic)
+
+**关键假设**:
+- 
+
+**适用边界**:
+- 
+
+**失效条件**:
+- 
+
+---
+
 ## 📚 核心洞察
 
 ```dataview
 LIST FROM "02-Knowledge/Insight"
-WHERE up = this.file.link OR contains(related, this.file.link)
+WHERE contains(context, this.file.link) OR contains(basis, this.file.link)
 SORT maturity DESC
 ```
 
 ---
 
-<!-- === DEEP MODE SECTIONS === -->
-
-<%* if (tp.frontmatter.mode === "deep") { %>
----
-
-## 🏗️ 架构与原理 (Deep Mode)
+## 🏗️ 架构与原理 (可选)
 
 ### 底层逻辑
 **核心原理**: 
@@ -72,7 +83,7 @@ SORT maturity DESC
 
 ---
 
-## 🔗 系统连接 (Deep Mode)
+## 🔗 系统连接 (可选)
 
 **上游依赖**: [[02-Knowledge/System/]]  
 **下游应用**: [[02-Knowledge/System/]]  
@@ -80,16 +91,22 @@ SORT maturity DESC
 
 ---
 
-## 🎓 学习资源 (Deep Mode)
+## 🎓 学习资源 (可选)
 
 - 核心书籍: 
 - 关键论文/文章: 
 - 实践案例: [[05-Execution/Project/]]
-
-<%* } %>
 
 ---
 
 ## 🧠 记忆索引
 
 **关键词**: #<%tp.file.cursor(3)%> #
+
+---
+
+## 🧬 版本演化 (Lifecycle)
+
+**变更记录**:
+- v1.0 (<%tp.date.now("YYYY-MM-DD")%>): 初始版本
+- 

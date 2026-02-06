@@ -1,10 +1,9 @@
 ---
 # === 核心属性 ===
 type: tools
-mode: deep  # Tools 仅支持 deep mode (思维工具需要深度思考)
-status: active
 created: <%tp.date.now("YYYY-MM-DD HH:mm")%>
 updated: <%tp.date.now("YYYY-MM-DD HH:mm")%>
+last_reviewed: ""       # 上次审阅时间 (YYYY-MM-DD)
 tags: [neuromancer/tools, thinking]
 
 # === 扩展属性 ===

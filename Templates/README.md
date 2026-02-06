@@ -1,19 +1,17 @@
-# Templates 3 系统用户指南 v1.1
+# Templates 3 系统用户指南 v1.2
 
-> **设计哲学**: "深度可选，效率优先" (Depth Optional, Efficiency First)  
-> **核心创新**: 双模式架构 (Quick/Deep) + 智能查询系统 + 思维工具箱
+> **设计哲学**: "认知/执行分离，知识默认深度"  
+> **核心创新**: 语义字段统一 + 双轨系统 (The Engine / The Library)
 
 ---
 
-## 🎉 v1.1 新特性
+## 🎉 v1.2 变更重点
 
-✨ **新增3个核心模板**:
-- **Tools** - 5大思维工具（Scale/Paradox/First Principles/Inversion/Simulation）
-- **Environment** - 三维环境优化（物理/数字/社交）
-- **Vital** - 生命力双底座（健康+财务整合）
-
-📈 **系统完整度**: 70% → 90%  
-⭐ **总评分**: 9.34 → 9.68/10
+✨ **关键调整**:
+- **语义拆分**: `up` 拆分为 `project` (执行归属) 与 `context` (知识语境)
+- **去任务化**: 移除知识节点的 SRS 截止字段，改为 `last_reviewed`
+- **字段收敛**: `related` 改为 `basis/counter`，`source` 改为 `origin_link/origin_node`
+- **环境降噪**: Environment/Vital 改为轻量实验记录，而非维护型清单
 
 ---
 
@@ -33,23 +31,25 @@ Templates 3/
 └── Bases/             # 数据视图 (37个自动聚合查询)
 ```
 
-### 2. 双模式系统 (Dual Mode)
+### 2. 双轨系统 (Engine / Library)
 
-几乎所有核心模板都支持两种模式。你可以在笔记的 properties (YAML Frontmatter) 中修改 `mode`：
+系统分为两个子系统：
 
-- **Quick Mode (`mode: quick`)**:
-  - **场景**: 快速记录、日常使用、时间紧张
-  - **特点**: 板块少、自动化程度高、填写只需 2-5 分钟
-  - **默认**: Daily, Action, Project, Person, Environment, Vital
-  - **优势**: 降低心理负担，提高使用频率
+- **The Engine (执行子系统)**: Action / Project / Goal / Compass / Vital  
+  重点是行动、进度、截止时间与对齐关系。
 
-- **Deep Mode (`mode: deep`)**:
-  - **场景**: 周末复盘、深度思考、战略规划、复杂问题
-  - **特点**: 完整框架、包含能量管理/风险分析/思维工具/记忆宫殿
-  - **默认**: Compass, OS, Loop, Tools
-  - **切换**: 在 YAML 中将 `quick` 改为 `deep`，然后重新应用模板
+- **The Library (认知子系统)**: Clip / Insight / System / Map / Principle  
+  重点是语境、论证与成熟度。知识模板默认深度，避免“快记堆积”。
 
-**双模式核心价值**: 日常效率 + 深度思考，两者兼得！
+**Quick 模式仅保留在 Signal**，用于捕捉想法种子。其他知识模板不再依赖 Quick/Deep 切换。
+
+**知识节点最小结构**（用于长期演化）:
+- Identity: 文件名 + type
+- Semantics: 核心命题/定义
+- Epistemic: claim_type + confidence + evidence
+- Context: context/scope
+- Relation: basis/counter
+- Lifecycle: maturity + updated + last_reviewed + supersedes/invalidated_by
 
 ---
 
@@ -81,12 +81,11 @@ Templates 3/
 1. 使用 `Signal` 快速记下灵感种子
 
 **Level 2 - 初步加工**:
-2. 将Signal转化为 `Insight` (Quick Mode)
+2. 将Signal转化为 `Insight`
 3. 使用"如果...那么...反面是..."辩证思考
 
 **Level 3 - 深度思考**:
-4. 切换Insight为Deep Mode
-5. 补充"结构化表达"和"实践检验"
+4. 补充"结构化表达"和"实践检验"
 
 **Level 4 - 复杂问题** ⭐NEW:
 6. 使用 `Tools` 模板调用思维工具
@@ -112,35 +111,24 @@ Templates 3/
 7. 使用 `OS` 进行系统健康诊断
 8. 复审Compass是否需要调整
 
-### 🌱 生命力管理 (Vital Flow) ⭐NEW
+### 🌱 生命力管理 (Vital Flow)
 
-**每周快速检查**:
-1. 打开 `Vital` (Quick Mode)
-2. 更新健康评分（睡眠/运动/饮食）
-3. 更新财务数据（收支/储蓄率）
-4. 查看Vital Score趋势
+**每周轻量检查**:
+1. 打开 `Vital`
+2. 记录健康/财务的“当前瓶颈”
+3. 选择 1-2 个小步实验
+4. 产生洞察后写入 `Insight`
 
-**每季度深度复盘**:
-5. 切换为Deep Mode
-6. 分析能量曲线
-7. 评估财务自由进度
-8. 设定下季度健康财务目标
+### 🏠 环境优化 (Environment Flow)
 
-### 🏠 环境优化 (Environment Flow) ⭐NEW
-
-**首次设置 (2小时)**:
+**首次设置 (30分钟)**:
 1. 创建 `Environment` 笔记
-2. 评估三维环境摩擦度
-   - 物理环境（工作/生活空间）
-   - 数字环境（通知/信息流）
-   - 社交环境（人际/社群）
-3. 识别Top 3摩擦点
-4. 制定改进计划
+2. 只写 Top 3 关键摩擦
+3. 设定一个最小可行的改进实验
 
 **持续优化 (每月)**:
-5. 环境重置日（清理物理/数字/社交空间）
-6. 重新评估摩擦度
-7. A/B测试新的环境设计
+4. 复盘实验结果
+5. 将有效模式沉淀为 `Insight`
 
 ---
 
@@ -169,39 +157,25 @@ Templates 3/
 - 第3-8周: 每周至少用1次，形成习惯
 - 3个月+: 自然调用，工具组合使用
 
-### Environment - 环境优化 ⭐
+### Environment - 环境优化
 
 **核心理念**:
-> "不要依赖意志力，而要设计环境"
+> "减少摩擦，而非维护清单"
 
-**三个层次**:
-1. **物理环境**: 2秒原则（工具触达）
-2. **数字环境**: 零噪音原则（通知管理）
-3. **社交环境**: 能量原则（充电型vs耗电型）
+**执行方式**:
+1. 只记录 Top 3 关键摩擦
+2. 每次只做一个最小实验
+3. 有效模式沉淀为 `Insight`
 
-**立即可做**:
-- [ ] 关闭所有非必要通知
-- [ ] 清理桌面（物理+数字）
-- [ ] 删除1个分心App
-- [ ] 退出3个无价值群聊
+### Vital - 生命力管理
 
-### Vital - 生命力管理 ⭐
+**核心理念**:
+> "关注约束与瓶颈，而非精细台账"
 
-**双底座理论**:
-- 健康 = 提供能量和时间
-- 财务 = 提供选择和自由
-- 生命力 = 健康 × 财务
-
-**Quick Mode (5分钟)**:
-- 健康: 能量/睡眠/运动评分
-- 财务: 本月收支/储蓄率
-- Vital Score自动计算
-
-**Deep Mode (季度复盘)**:
-- 能量曲线分析
-- 财务自由路径（Level 0-5）
-- 收入结构优化（主动vs被动）
-- 健康↔财富正循环设计
+**执行方式**:
+1. 只写当前瓶颈（健康/财务）
+2. 选择 1-2 个小步实验
+3. 将验证结果沉淀为 `Loop` 或 `Insight`
 
 ---
 

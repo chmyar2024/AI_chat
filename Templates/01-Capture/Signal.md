@@ -7,8 +7,8 @@ created: <%tp.date.now("YYYY-MM-DD HH:mm")%>
 tags: [neuromancer/signal]
 
 # === 扩展属性 ===
-source: ""          # 来源 (书籍/对话/观察)
-related: []
+origin_link: ""     # 来源 (书籍/对话/观察)
+basis: []
 ---
 
 > [!abstract] Signal: 快速捕获想法种子

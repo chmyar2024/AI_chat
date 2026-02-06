@@ -11,4 +11,5 @@ views:
       - categories
       - status
       - tags
-      - source
+      - origin_link
+      - origin_node

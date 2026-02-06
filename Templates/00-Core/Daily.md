@@ -85,10 +85,10 @@ energy_level: 5
 - **低谷 (Low)**: 
 
 ### 记忆训练
-**今日复习任务**:
+**知识体检**:
 ```dataview
-LIST FROM "02-Knowledge/Recall"
-WHERE sr-due = date(today)
+LIST FROM "02-Knowledge"
+WHERE (last_reviewed = null OR last_reviewed <= date(today) - dur(30 days))
 LIMIT 3
 ```
 

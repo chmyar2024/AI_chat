@@ -1,13 +1,14 @@
 ---
 # === 核心属性 ===
 type: map
-mode: quick
-status: active
 created: <%tp.date.now("YYYY-MM-DD HH:mm")%>
+updated: <%tp.date.now("YYYY-MM-DD HH:mm")%>
+last_reviewed: ""       # 上次审阅时间 (YYYY-MM-DD)
 tags: [neuromancer/map]
 
 # === 扩展属性 ===
 domain: ""          # 知识领域
+scope: ""           # 适用范围/视角
 ---
 
 > [!abstract] Map of Content (MOC)
@@ -38,7 +39,7 @@ domain: ""          # 知识领域
 > [!info] 自动聚合相关笔记
 > ```dataview
 > LIST FROM "02-Knowledge"
-> WHERE (contains(up, this.file.link) OR contains(tags, this.file.name)) AND file.name != this.file.name
+> WHERE (contains(context, this.file.link) OR contains(tags, this.file.name)) AND file.name != this.file.name
 > SORT maturity DESC
 > ```
 

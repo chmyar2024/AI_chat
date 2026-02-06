@@ -184,7 +184,7 @@ SORT file.ctime DESC
 
 ```dataview
 LIST FROM "02-Knowledge/Loop"
-WHERE type = "loop" AND contains(related, this.file.link)
+WHERE type = "loop" AND contains(context, this.file.link)
 SORT created DESC
 ```
 

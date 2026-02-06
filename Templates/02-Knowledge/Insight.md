@@ -1,31 +1,26 @@
 ---
 # === 核心属性 ===
 type: insight
-mode: quick  # quick | deep
+claim_type: hypothesis   # observation | hypothesis | model | principle
 maturity: budding       # budding | validating | mature | internalized
+confidence: 0.6         # 0-1, epistemic confidence
 created: <%tp.date.now("YYYY-MM-DD HH:mm")%>
+updated: <%tp.date.now("YYYY-MM-DD HH:mm")%>
+last_reviewed: ""       # 上次审阅时间 (YYYY-MM-DD)
 tags: [neuromancer/insight]
 
 # === 扩展属性 ===
-up: []              # 上位概念/MOC [[02-Knowledge/Map]]
-related: []         # 强相关
+context: []         # 语境/MOC [[02-Knowledge/Map]]
+basis: []           # 依据/支撑
 counter: []         # 反对观点/竞争假说 (关键新增)
-
-# === SRS 间隔复习 ===
-sr-due: <%tp.date.now("YYYY-MM-DD", 1)%>
-sr-interval: 1
-sr-ease: 250
-
-<%* if (tp.frontmatter.mode === "deep") { %>
-# === Deep Mode 属性 ===
-certainty: 50%      # 确信度
-memory_anchor: ""   # 记忆锚点
-<%* } %>
+assumptions: []     # 关键假设
+invalidated_by: []  # 被哪些证据/洞察推翻
+supersedes: []      # 替代哪些旧洞察
 ---
 
-> [!tip] 模板模式
-> **Quick Mode**: 捕捉核心命题与反直觉点  
-> **Deep Mode**: 完整的认知论证与情境分析
+> [!tip] 记录原则
+> **默认深度**: 以清晰命题 + 辩证结构为主  
+> **控制负担**: 2分钟内写完核心区块即可
 
 ---
 
@@ -50,6 +45,19 @@ memory_anchor: ""   # 记忆锚点
 
 ---
 
+## 🔍 证据与可信度 (Epistemic)
+
+**证据类型**: (观察/实验/二手资料/推理)
+
+**关键依据**:
+1. 
+2. 
+
+**不确定性来源**:
+- 
+
+---
+
 ## 🛠️ 应用实验室
 
 **如果这是真的，那意味着...**:
@@ -60,12 +68,7 @@ memory_anchor: ""   # 记忆锚点
 
 ---
 
-<!-- === DEEP MODE SECTIONS === -->
-
-<%* if (tp.frontmatter.mode === "deep") { %>
----
-
-## ⚖️ 深度辩证 (Deep Mode)
+## ⚖️ 深度辩证 (可选)
 
 ### 竞争假说 (Competing Hypotheses)
 **其他可能的解释**:
@@ -81,7 +84,7 @@ memory_anchor: ""   # 记忆锚点
 
 ---
 
-## 🧠 认知内化 (Deep Mode)
+## 🧠 认知内化 (可选)
 > 
 ### 决策实验 (Decision Application)
 > [!important] 反向压力测试
@@ -114,14 +117,20 @@ dv.paragraph(`- **Principle Extractions**: ${principles} / 1`);
 > 
 > 
 
-<%* } %>
+---
+
+## 🧬 版本演化 (Lifecycle)
+
+**变更记录**:
+- v1.0 (<%tp.date.now("YYYY-MM-DD")%>): 初始命题
+- 
 
 ---
 
 ## 🔄 链接网络
 
 **MOC (地图)**: [[02-Knowledge/Map/]]  
-**来源 (Source)**: [[01-Capture/Clip/]]  
+**来源 (Origin)**: [[01-Capture/Clip/]]  
 **反向链接 (Counter)**: [[02-Knowledge/Insight/]]  
 
 ---

@@ -9,8 +9,9 @@ tags: [neuromancer/action]
 # === 扩展属性 ===
 priority: medium    # high/medium/low
 due: ""             # YYYY-MM-DD
-related: []
-up: []              # 所属项目 [[05-Execution/Project]]
+basis: []           # 依据/理由
+counter: []         # 风险/反对因素
+project: []         # 执行归属 [[05-Execution/Project]]
 <%* if (tp.frontmatter.mode === "deep") { %>
 # === Deep Mode 属性 ===
 energy_cost: 3      # 1-10
