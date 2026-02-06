@@ -10,8 +10,9 @@ tags: [neuromancer/goal]
 target_date: ""     # 目标完成日期
 progress: 0%
 priority: high      # high/medium/low
-related: []
-up: [[04-Strategy/Compass]]  # 对齐 Compass
+basis: []           # 依据/理由
+counter: []         # 风险/反对因素
+project: [[04-Strategy/Compass]]  # 对齐 Compass
 <%* if (tp.frontmatter.mode === "deep") { %>
 # === Deep Mode 属性 ===
 category: ""        # 生活/工作/健康/财务/关系/成长
@@ -66,7 +67,7 @@ measurement: ""     # 衡量标准
 
 ```dataview
 TASK FROM "05-Execution/Action"
-WHERE up = this.file.link
+WHERE project = this.file.link
 WHERE !completed
 SORT priority DESC
 ```
@@ -187,9 +188,9 @@ TABLE
   priority as "优先级",
   due as "截止"
 FROM "05-Execution/Action"
-WHERE up = this.file.link
+WHERE project = this.file.link
 SORT status ASC, priority DESC
 ```
 
 ### 完成率
-`$= const tasks = dv.pages('"05-Execution/Action"').where(p => p.up?.path === dv.current().file.path).file.tasks.array(); if(tasks.length === 0) return "0%"; const done = tasks.filter(t => t.completed).length; Math.round((done/tasks.length)*100)`%
+`$= const tasks = dv.pages('"05-Execution/Action"').where(p => p.project?.path === dv.current().file.path).file.tasks.array(); if(tasks.length === 0) return "0%"; const done = tasks.filter(t => t.completed).length; Math.round((done/tasks.length)*100)`%

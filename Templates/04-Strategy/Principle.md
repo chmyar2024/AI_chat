@@ -1,17 +1,24 @@
 ---
 # === 核心属性 ===
 type: principle
-mode: deep
-status: active
+maturity: stable     # developing | stable | evergreen
+claim_type: principle # principle | heuristic
+confidence: 0.7
 created: <%tp.date.now("YYYY-MM-DD HH:mm")%>
 updated: <%tp.date.now("YYYY-MM-DD HH:mm")%>
+last_reviewed: ""    # 上次审阅时间 (YYYY-MM-DD)
 tags: [neuromancer/principle]
 
 # === 扩展属性 ===
 domain: ""          # 适用领域
-source: ""          # 来源
-related: []
-up: [[04-Strategy/Compass]]
+origin_link: ""     # 外部来源
+origin_node: ""     # 内部来源
+basis: []
+counter: []
+project: [[04-Strategy/Compass]]
+assumptions: []
+invalidated_by: []
+supersedes: []
 ---
 
 > [!abstract] Principle: 行为原则/决策规则
@@ -42,7 +49,8 @@ up: [[04-Strategy/Compass]]
 
 ## 💡 原则来源
 
-**灵感来源**: `= this.source`  
+**外部来源**: `= this.origin_link`  
+**内部来源**: `= this.origin_node`  
 **提炼自**: [[02-Knowledge/Insight/]]  
 **验证于**: [[02-Knowledge/Loop/]]
 

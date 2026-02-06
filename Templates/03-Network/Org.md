@@ -10,7 +10,8 @@ tags: [neuromancer/org]
 org_type: ""        # company/community/institution
 industry: ""
 relationship: ""    # employer/client/partner/customer
-related: []
+basis: []
+counter: []
 ---
 
 > [!abstract] Org: 组织机构管理
@@ -42,7 +43,7 @@ related: []
 
 ```dataview
 LIST FROM "03-Network/Person"
-WHERE up = this.file.link
+WHERE org = this.file.link
 ```
 
 ### 快速添加

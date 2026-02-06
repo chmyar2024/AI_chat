@@ -9,7 +9,8 @@ tags: [neuromancer/review]
 # === 扩展属性 ===
 period: weekly      # weekly/monthly/quarterly/yearly
 date_range: ""      # YYYY-MM-DD - YYYY-MM-DD
-related: []
+basis: []
+counter: []
 ---
 
 > [!abstract] Review: 周期性系统复盘

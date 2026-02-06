@@ -10,7 +10,8 @@ tags: [neuromancer/resource]
 resource_type: ""   # tool/service/api/library/dataset
 access: ""          # free/paid/subscription
 url: ""
-related: []
+basis: []
+counter: []
 ---
 
 > [!abstract] Resource: 外部资源管理

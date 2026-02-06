@@ -42,7 +42,7 @@ views:
     filters:
       or:
         - list(loc).contains(this)
-        - list(loc).containsAny(this.related)
+        - list(loc).containsAny(this.basis)
     order:
       - file.name
     sort:

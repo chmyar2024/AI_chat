@@ -9,8 +9,9 @@ tags: [neuromancer/project]
 # === 扩展属性 ===
 priority: medium    # high/medium/low
 deadline: ""        # YYYY-MM-DD
-related: []
-up: [[04-Strategy/Goal]]
+basis: []           # 依据/理由
+counter: []         # 风险/反对因素
+project: [[04-Strategy/Goal]] # 执行对齐/归属
 <%* if (tp.frontmatter.mode === "deep") { %>
 # === Deep Mode 属性 ===
 stakeholders: []
@@ -35,7 +36,7 @@ stakeholders: []
 
 ```dataview
 TASK FROM "05-Execution/Action"
-WHERE up = this.file.link
+WHERE project = this.file.link
 WHERE !completed
 SORT priority DESC, due ASC
 ```
@@ -80,4 +81,4 @@ SORT priority DESC, due ASC
 
 ## 📊 自动化统计
 
-**完成率**: `$= const tasks = dv.pages('"05-Execution/Action"').where(p => p.up?.path === dv.current().file.path).file.tasks.array(); if(tasks.length === 0) return "0%"; const done = tasks.filter(t => t.completed).length; Math.round((done/tasks.length)*100)`%
+**完成率**: `$= const tasks = dv.pages('"05-Execution/Action"').where(p => p.project?.path === dv.current().file.path).file.tasks.array(); if(tasks.length === 0) return "0%"; const done = tasks.filter(t => t.completed).length; Math.round((done/tasks.length)*100)`%

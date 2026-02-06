@@ -1,25 +1,24 @@
 ---
 # === 核心属性 ===
 type: loop
-mode: quick  # quick | deep
-status: active
 created: <%tp.date.now("YYYY-MM-DD HH:mm")%>
+updated: <%tp.date.now("YYYY-MM-DD HH:mm")%>
+last_reviewed: ""       # 上次审阅时间 (YYYY-MM-DD)
 tags: [neuromancer/loop]
 
 # === 扩展属性 ===
 period: daily       # daily/weekly/monthly/project
-related: []
-up: []              # 关联项目/系统
-<%* if (tp.frontmatter.mode === "deep") { %>
-# === Deep Mode 属性 ===
-impact: medium      # high/medium/low
-actionable: true    # 是否有可行动的洞察
-<%* } %>
+project: []         # 执行归属 [[05-Execution/Project]]
+context: []         # 知识语境 [[02-Knowledge/System]] / [[02-Knowledge/Map]]
+basis: []
+counter: []
+assumptions: []
+invalidated_by: []
 ---
 
-> [!tip] 模板模式
-> **Quick Mode** (当前): 快速复盘 (3分钟)  
-> **Deep Mode**: 深度反思 (15分钟)
+> [!tip] 复盘原则
+> **默认深度**: 先写核心事实，再补充反思  
+> **工具位置**: 5 Whys、模式识别等深度工具应优先写在这里
 
 ---
 
@@ -67,12 +66,7 @@ actionable: true    # 是否有可行动的洞察
 
 ---
 
-<!-- === DEEP MODE SECTIONS === -->
-
-<%* if (tp.frontmatter.mode === "deep") { %>
----
-
-## 🏗️ 深度分析 (Deep Mode)
+## 🏗️ 深度分析 (可选)
 
 ### 五个为什么 (5 Whys)
 1. **为什么会这样**? 
@@ -91,7 +85,7 @@ actionable: true    # 是否有可行动的洞察
 
 ---
 
-## 📈 影响评估 (Deep Mode)
+## 📈 影响评估 (可选)
 
 ### 直接影响
 **对我**: 
@@ -104,7 +98,7 @@ actionable: true    # 是否有可行动的洞察
 
 ---
 
-## 🎓 提取知识 (Deep Mode)
+## 🎓 提取知识 (可选)
 
 ### 新洞察
 **提炼出的原则/规律**: 
@@ -118,7 +112,7 @@ actionable: true    # 是否有可行动的洞察
 
 ---
 
-## 🔄 比较分析 (Deep Mode)
+## 🔄 比较分析 (可选)
 
 | 维度 | 预期 | 实际 | 差异原因 |
 |------|------|------|----------|
@@ -126,8 +120,6 @@ actionable: true    # 是否有可行动的洞察
 | 质量 | | | |
 | 资源 | | | |
 | 结果 | | | |
-
-<%* } %>
 
 ---
 
@@ -159,4 +151,3 @@ actionable: true    # 是否有可行动的洞察
 
 
 ### 参考资料
-

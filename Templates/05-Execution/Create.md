@@ -9,7 +9,8 @@ tags: [neuromancer/create]
 # === 扩展属性 ===
 format: ""          # 文章/视频/课程/产品/设计
 audience: ""        # 目标受众
-related: []
+basis: []           # 依据/理由
+counter: []         # 风险/反对因素
 <%* if (tp.frontmatter.mode === "deep") { %>
 # === Deep Mode 属性 ===
 impact_goal: ""     # 期望影响
